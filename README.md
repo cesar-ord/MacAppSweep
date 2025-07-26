@@ -26,6 +26,22 @@ git clone https://github.com/your-org/mac-uninstaller.git
 open mac-uninstaller.xcodeproj
 ```
 
+Once the project opens in Xcode you can run the application with `Cmd + R` and
+execute the unit tests using `Cmd + U`.
+
+### 🚀 Build & Package
+
+1. In Xcode choose **Product -> Archive** to produce a release build.
+2. Install [`create-dmg`](https://github.com/create-dmg/create-dmg) via Homebrew:
+   `brew install create-dmg`.
+3. Generate a distributable `.dmg`:
+
+   ```bash
+   create-dmg "build/MacUninstaller.app"
+   ```
+
+The resulting disk image can be shared with users on macOS 13 or later.
+
 ### 🧪 Tests
 
 ```bash
